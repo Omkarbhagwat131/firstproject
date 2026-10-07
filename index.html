@@ -3,32 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Professional Login Page</title>
     <style>
-        body { font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f0f2f5; margin: 0; }
-        .login-container { background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 300px; }
-        .login-container h2 { text-align: center; margin-bottom: 20px; color: #333; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 5px; color: #666; }
-        .form-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-        button { width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
-        button:hover { background-color: #0056b3; }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f2f5;
+        }
+
+        .login-card {
+            display: flex;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 800px;
+            max-width: 900px;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .left-panel {
+            background-color: #1e1e38;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .left-panel h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .left-panel p {
+            font-size: 16px;
+            color: #b0b0d0;
+            line-height: 1.5;
+        }
+
+        .shape {
+            width: 100px;
+            height: 100px;
+            background: #ff4081;
+            border-radius: 50%;
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            opacity: 0.2;
+        }
+
+        .right-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .right-panel h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: #333333;
+        }
+
+        .form-group {
+            width: 100%;
+            max-width: 320px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #666666;
+            font-size: 14px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cccccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #1e1e38;
+        }
+
+        button.btn-login {
+            width: 100%;
+            max-width: 320px;
+            padding: 12px;
+            background-color: #1e1e38;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button.btn-login:hover {
+            background-color: #3a3a60;
+        }
+
+        @media (max-width: 768px) {
+            .login-card {
+                flex-direction: column;
+                height: auto;
+                width: 90%;
+            }
+            .left-panel {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <h2>Login</h2>
-        <form>
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit">Sign In</button>
-        </form>
+
+    <div class="login-card">
+        <div class="left-panel">
+            <div class="shape"></div>
+            <h1>Welcome Back</h1>
+            <p>Please login to continue accessing your account and managing your projects.</p>
+        </div>
+        <div class="right-panel">
+            <h2>Login</h2>
+            <form>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="••••••">
+                </div>
+                <button type="submit" class="btn-login">Login</button>
+            </form>
+        </div>
     </div>
+
 </body>
 </html>
